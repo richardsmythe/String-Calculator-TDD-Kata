@@ -6,9 +6,15 @@ namespace StringCalculatorKata
         {
             if (String.IsNullOrEmpty(numbers))
                 return 0;
+
             else
             {
-                return int.Parse(numbers);
+                // get sequence of ints
+                var result = numbers.Split(',')
+                .Select(s => int.Parse(s))
+                .Sum();
+
+                return result;
             }
         }
     }
