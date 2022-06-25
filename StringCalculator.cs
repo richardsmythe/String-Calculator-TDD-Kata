@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace StringCalculatorKata
 {
     public class StringCalculator
@@ -9,16 +13,21 @@ namespace StringCalculatorKata
 
             else
             {
-                var delimiters = new List<char>[] { ',', '\n' };
-                //check if string starts with // 
-                if (numbers.StartsWith("//"))
+                var delimiters = new List<char> { ',', '\n' };
+
+                string numbersString = numbers;
+                //check if string starts with '//'
+                if (numbersString.StartsWith("//"))
                 {
-                    var newDelimiter = numbers.Split('\n').First();
+                    // rebuild string without the '//'
+                    var splitInput = numbersString.Split('\n');
+                    var newDelimiter = splitInput.First().Trim('/');
+                    numbersString = String.Join('\n', splitInput.Skip(1));
                     delimiters.Add(Convert.ToChar(newDelimiter));
                 }
 
                 // get sequence of ints
-                var result = numbers.Split(delimiters.ToArray)
+                var result = numbersString.Split(delimiters.ToArray())
                 .Select(s => int.Parse(s))
                 .Sum();
 
@@ -28,3 +37,5 @@ namespace StringCalculatorKata
     }
 
 }
+
+
