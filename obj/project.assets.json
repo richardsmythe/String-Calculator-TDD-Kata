@@ -5924,19 +5924,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\richard.smythe\\Source\\StringCalculatorKata\\StringCalculatorKata.csproj",
+      "projectUniqueName": "C:\\Users\\richard.smythe\\Source\\StringCalculatorKata\\StringCalculatorKata.csproj",
       "projectName": "StringCalculatorKata",
-      "projectPath": "c:\\Users\\richard.smythe\\Source\\StringCalculatorKata\\StringCalculatorKata.csproj",
+      "projectPath": "C:\\Users\\richard.smythe\\Source\\StringCalculatorKata\\StringCalculatorKata.csproj",
       "packagesPath": "C:\\Users\\richard.smythe\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\richard.smythe\\Source\\StringCalculatorKata\\obj\\",
+      "outputPath": "C:\\Users\\richard.smythe\\Source\\StringCalculatorKata\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\richard.smythe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\richard.smythe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

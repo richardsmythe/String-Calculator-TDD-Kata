@@ -16,14 +16,16 @@ namespace StringCalculatorKata
             Assert.Equal(0, result);
         }
 
-        [Fact]
-        public void Return1GivenStringWith1()
+        [Theory]
+        [InlineData("1", 1)]
+        [InlineData("2", 2)]
+        public void Return1GivenStringWith1(string numbers, int expectedResult)
         {
             var calculator = new StringCalculator();
 
-            var result = calculator.Add("1");
+            var result = calculator.Add(numbers);
 
-            Assert.Equal(1, result);
+            Assert.Equal(expectedResult, result);
         }
 
 

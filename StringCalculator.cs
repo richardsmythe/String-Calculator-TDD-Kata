@@ -8,7 +8,7 @@ namespace StringCalculatorKata
                 return 0;
             else
             {
-                return 1;
+                return int.Parse(numbers);
             }
         }
     }
