@@ -53,12 +53,27 @@ namespace StringCalculatorKata
         [Theory]
         [InlineData("//;\n1;2;3", 6)]
         public void ReturnSumGivenStringWithCustomDelimiter(string numbers,
-       int expectedResult)
+            int expectedResult)
         {
             var result = _calculator.Add(numbers);
 
             Assert.Equal(expectedResult, result);
         }
+
+        [Theory]
+        [InlineData("-1,2", "Negatives not allowed: -1")]
+        [InlineData("-1,-2", "Negatives not allowed: -1,-2")]
+        public void ThrowsGivenNegativeInputs(string numbers, 
+            string expectedMessage)
+        {
+
+            Action action = () => _calculator.Add(numbers);
+
+            var exception = Assert.Throws<Exception>(() => action());
+
+            Assert.Equal(expectedMessage, exception.Message);
+        }
+
 
 
     }

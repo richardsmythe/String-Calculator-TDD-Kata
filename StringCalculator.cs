@@ -26,10 +26,19 @@ namespace StringCalculatorKata
                     delimiters.Add(Convert.ToChar(newDelimiter));
                 }
 
-                // get sequence of ints
-                var result = numbersString.Split(delimiters.ToArray())
-                .Select(s => int.Parse(s))
-                .Sum();
+                var numberList = numbersString.Split(delimiters.ToArray())
+                .Select(s => int.Parse(s));
+
+                var negatives = numberList.Where(n => n < 0);
+
+                if (negatives.Any())
+                {
+                    string negativestring = String.Join(',', negatives
+                        .Select(n => n.ToString()));
+                    throw new Exception($"Negatives not allowed: {negativestring}");
+                }
+
+                var result = numberList.Sum();
 
                 return result;
             }
