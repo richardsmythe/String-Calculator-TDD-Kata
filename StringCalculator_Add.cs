@@ -50,6 +50,17 @@ namespace StringCalculatorKata
             Assert.Equal(expectedResult, result);
         }
 
+        [Theory]
+        [InlineData("//;\n1;n2;3", 6)]
+        public void ReturnSumGivenStringWithCustomDelimiter(string numbers,
+       int expectedResult)
+        {
+            var result = _calculator.Add(numbers);
+
+            Assert.Equal(expectedResult, result);
+        }
+
+
     }
 
 

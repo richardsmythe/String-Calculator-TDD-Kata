@@ -9,9 +9,16 @@ namespace StringCalculatorKata
 
             else
             {
+                var delimiters = new List<char>[] { ',', '\n' };
+                //check if string starts with // 
+                if (numbers.StartsWith("//"))
+                {
+                    var newDelimiter = numbers.Split('\n').First();
+                    delimiters.Add(Convert.ToChar(newDelimiter));
+                }
+
                 // get sequence of ints
-                var delimiters = new char[] { ',', '\n' };
-                var result = numbers.Split(delimiters)
+                var result = numbers.Split(delimiters.ToArray)
                 .Select(s => int.Parse(s))
                 .Sum();
 
