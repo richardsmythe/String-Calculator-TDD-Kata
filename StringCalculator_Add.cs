@@ -87,6 +87,20 @@ namespace StringCalculatorKata
         }
 
 
+        [Theory]
+        [InlineData("//***\n1***2***3", 6)]
+        public void ReturnSumUsingDelimitersOfAnyLength(string numbers,
+          int expectedResult)
+        {
+            var result = _calculator.Add(numbers);
+
+            Assert.Equal(expectedResult, result);
+        }
+
+
+
+
+
 
     }
 

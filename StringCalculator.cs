@@ -13,7 +13,7 @@ namespace StringCalculatorKata
 
             else
             {
-                var delimiters = new List<char> { ',', '\n' };
+                var delimiters = new List<string> { ",", "\n" };
 
                 string numbersString = numbers;
                 //check if string starts with '//'
@@ -22,12 +22,33 @@ namespace StringCalculatorKata
                     // rebuild string without the '//'
                     var splitInput = numbersString.Split('\n');
                     var newDelimiter = splitInput.First().Trim('/');
-                    numbersString = String.Join('\n', splitInput.Skip(1));
-                    delimiters.Add(Convert.ToChar(newDelimiter));
+                    numbersString = String.Join("\n", splitInput.Skip(1));
+                    delimiters.Add(newDelimiter);
+
+
                 }
 
-                var numberList = numbersString.Split(delimiters.ToArray())
-                .Select(s => int.Parse(s));
+
+                //List<char> temp = numbersString.Where(c => char.IsDigit(c)).ToList();
+
+                List<int> intList = new List<int>();
+
+
+               // bool res = delimiters.Any(s => numbersString.Contains(s));
+                //if (res)
+                //{
+                //    var x = numbersString.Split(new[] { delimiters.Last() }, System.StringSplitOptions.RemoveEmptyEntries);
+                //}
+                // numbersString= 1***2***3
+
+
+
+                //var numberList = numbersString.Split(Convert.ToChar(delimiters.ToArray()))
+                //   .Select(s => int.Parse(s));
+
+                var numberList = numbersString.Split(new[] { delimiters.Last() }, System.StringSplitOptions.RemoveEmptyEntries)
+                    .Select(s => int.Parse(s));
+
 
                 var negatives = numberList.Where(n => n < 0);
 
