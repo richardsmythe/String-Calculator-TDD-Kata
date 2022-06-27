@@ -59,7 +59,6 @@ namespace StringCalculatorKata
                     throw new Exception($"Negatives not allowed: {negativestring}");
                 }
 
-
                 var result = numberList.Where(n => n <= 1000).Sum();
                 return result;
 
