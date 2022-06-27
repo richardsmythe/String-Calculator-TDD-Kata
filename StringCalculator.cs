@@ -30,27 +30,13 @@ namespace StringCalculatorKata
 
 
                     numbersString = String.Join('\n', splitInput.Skip(1));
-                    // add only first char of new delimiter
+
                     // multiple delimiters should only be recorded as 1 character in delimiter list,
                     if (newDelimiter != null)
                     {
                         delimiters.Add(Convert.ToChar(newDelimiter[0]));
                     }
                 }
-
-
-                //var currentDelimiter = delimiters.Last();
-                //if (currentDelimiter.ToString().Length > 1)
-                //{
-                //    var temp = numbersString.Split(new[] { currentDelimiter }, System.StringSplitOptions.RemoveEmptyEntries)
-                //        .Select(s => int.Parse(s));
-                //}
-
-                // if multiple occurances of a delimiter, rebuild input string to match
-                //int freq = numbersString.Count(f => (f == currentDelimiter));
-
-                //bool res = newDelimiter.Any(s => numbersString.Contains(s));
-
 
                 if ((newDelimiter != null) && (newDelimiter.Length > 1))
                 {
@@ -63,7 +49,6 @@ namespace StringCalculatorKata
                     numberList = numbersString.Split(delimiters.ToArray())
                     .Select(s => int.Parse(s));
                 }
-
 
                 var negatives = numberList.Where(n => n < 0);
 
