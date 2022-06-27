@@ -51,7 +51,7 @@ namespace StringCalculatorKata
         }
 
         [Theory]
-        [InlineData("//;\n1;2;3", 6)]
+        [InlineData("//;\n3;3;3", 9)]
         public void ReturnSumGivenStringWithCustomDelimiter(string numbers,
             int expectedResult)
         {
