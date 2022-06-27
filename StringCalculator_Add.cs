@@ -86,7 +86,6 @@ namespace StringCalculatorKata
             Assert.Equal(expectedResult, result);
         }
 
-
         [Theory]
         [InlineData("//***\n1***2***3", 6)]
         public void ReturnSumUsingDelimitersOfAnyLength(string numbers,
@@ -96,6 +95,8 @@ namespace StringCalculatorKata
 
             Assert.Equal(expectedResult, result);
         }
+
+
 
 
 
