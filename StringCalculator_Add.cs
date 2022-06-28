@@ -88,7 +88,8 @@ namespace StringCalculatorKata
 
         [Theory]
         [InlineData("//***\n1***2***3", 6)]
-        public void ReturnSumUsingDelimitersOfAnyLength(string numbers,
+        [InlineData("//****\n7****7****7", 21)]
+        public void ReturnSumUsingSameDelimiterOfAnyLength(string numbers,
           int expectedResult)
         {
             var result = _calculator.Add(numbers);
@@ -96,11 +97,20 @@ namespace StringCalculatorKata
             Assert.Equal(expectedResult, result);
         }
 
+        [Theory]
+        [InlineData("//&*!\n4!$*4%!$4", 12)]
+        public void ReturnSumWithMultipleDifferentDelimiters(string numbers,
+         int expectedResult)
+        {
+            // TO DO:
+            // Scan through each part
+            // if delimiters are unique, add each one to list,
+            // if contains multiple occurances of same char then process
 
+            var result = _calculator.Add(numbers);
 
-
-
-
+            Assert.Equal(expectedResult, result);
+        }
 
 
     }

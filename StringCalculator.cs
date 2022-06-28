@@ -31,7 +31,7 @@ namespace StringCalculatorKata
 
                     numbersString = String.Join('\n', splitInput.Skip(1));
 
-                    // multiple delimiters should only be recorded as 1 character in delimiter list,
+                    // multiple delimiters have to be recorded as 1 character in delimiter list,
                     if (newDelimiter != null)
                     {
                         delimiters.Add(Convert.ToChar(newDelimiter[0]));
