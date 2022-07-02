@@ -102,11 +102,6 @@ namespace StringCalculatorKata
         public void ReturnSumWithMultipleDifferentDelimiters(string numbers,
          int expectedResult)
         {
-            // TO DO:
-            // Scan through each part
-            // if delimiters are unique, add each one to list,
-            // if contains multiple occurances of same char then process
-
             var result = _calculator.Add(numbers);
 
             Assert.Equal(expectedResult, result);

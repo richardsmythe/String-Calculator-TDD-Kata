@@ -73,9 +73,10 @@ namespace StringCalculatorKata
                 }
                 else
                 {
-                    // removes delimters and finds numbers
                     numberList = numbersString.Split(delimiters.ToArray())
-                    .Select(s => int.Parse(s));
+                     .Where(s => !string.IsNullOrWhiteSpace(s))
+                     .Select(s => int.Parse(s));
+
                 }
 
                 var negatives = numberList.Where(n => n < 0);
