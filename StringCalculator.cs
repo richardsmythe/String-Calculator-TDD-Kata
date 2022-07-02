@@ -7,7 +7,7 @@ namespace StringCalculatorKata
 {
     public class StringCalculator
     {
-        public string? newDelimiter;
+        public string newDelimiter;
         public IEnumerable<int> numberList;
 
         internal object Add(string numbers)
@@ -25,23 +25,14 @@ namespace StringCalculatorKata
 
                 if (numbersString.StartsWith("//"))
                 {
-
                     var splitInput = numbersString.Split('\n');
                     var tmpStr = splitInput[0] + splitInput[1];
                     numbersString = tmpStr;
                     newDelimiter = splitInput.First().Trim('/');
-
                     numbersString = numbersString.Substring(2);
-                    //newDelimiter = splitInput.First().Trim('/');
-
-
-                    //numbersString = String.Join('\n', splitInput.Skip(1));
-
 
                     for (int i = 0; i < numbersString.Length; i++)
                     {
-                        // scan thru string, if delim[i] != delim[i]+1 then add delim[i]
-                        // if delim[i] is a number, or already in the List, skip.
                         if (numbersString[i] != numbersString[i] + 1)
                         {
                             bool isNum = numbersString[i].ToString().Any(char.IsDigit);
@@ -49,23 +40,20 @@ namespace StringCalculatorKata
                             {
                                 delimiters.Add(Convert.ToChar(numbersString[i]));
                             }
-
                         }
                         else
-                        {
-                            // add first
+                        {               
                             delimiters.Add(Convert.ToChar(newDelimiter[0]));
                         }
 
                     }
-                    bool clearNewDelimiter = delimiters.Contains(Convert.ToChar(newDelimiter.First()));
+                    bool clearNewDelimiter = delimiters.Contains(Convert.ToChar(newDelimiter.FirstOrDefault()));
                     if (clearNewDelimiter)
                     {
-                        // here
+                        // clear newDelimiters variable if delimiters List contains same chars
                         newDelimiter = null;
                     }
-
-                    // multiple delimiters have to be recorded as 1 character in delimiter list,
+                    
                     if (newDelimiter != null)
                     {
                         delimiters.Add(Convert.ToChar(newDelimiter[0]));
