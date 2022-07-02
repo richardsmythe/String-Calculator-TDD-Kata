@@ -59,6 +59,12 @@ namespace StringCalculatorKata
 
                     }
 
+                    if (delimiters.Any().Contains(Convert.ToChar(newDelimiter)))
+                    {
+                        // here
+                        newDelimiter = null;
+                    }
+
                     // multiple delimiters have to be recorded as 1 character in delimiter list,
                     if (newDelimiter != null)
                     {
@@ -66,7 +72,7 @@ namespace StringCalculatorKata
                     }
                 }
 
-                if ((newDelimiter != null) && (newDelimiter.Length > 1))
+                if ((newDelimiter != null) && (newDelimiter.Length > 1) )
                 {
                     numberList = numbersString.Split(new[] { newDelimiter }, System.StringSplitOptions.RemoveEmptyEntries)
                              .Select(s => int.Parse(s));
