@@ -99,6 +99,7 @@ namespace StringCalculatorKata
 
         [Theory]
         [InlineData("//&*!\n4!$*4%!$4", 12)]
+        [InlineData("//%^^\n$6&^6^£6!", 18)]
         public void ReturnSumWithMultipleDifferentDelimiters(string numbers,
          int expectedResult)
         {
@@ -106,10 +107,5 @@ namespace StringCalculatorKata
 
             Assert.Equal(expectedResult, result);
         }
-
-
     }
-
-
-
 }

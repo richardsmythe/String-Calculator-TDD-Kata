@@ -18,7 +18,7 @@ namespace StringCalculatorKata
 
             else
             {
-                // given delimters
+                // Given delimters
                 var delimiters = new List<char> { ',', '\n' };
 
                 string numbersString = numbers;
@@ -50,7 +50,7 @@ namespace StringCalculatorKata
                     bool clearNewDelimiter = delimiters.Contains(Convert.ToChar(newDelimiter.FirstOrDefault()));
                     if (clearNewDelimiter)
                     {
-                        // clear newDelimiters variable if delimiters List contains same chars
+                        // Clear newDelimiters variable if delimiters list contains same chars
                         newDelimiter = null;
                     }
                     
