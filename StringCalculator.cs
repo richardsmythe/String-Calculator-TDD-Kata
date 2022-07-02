@@ -58,8 +58,8 @@ namespace StringCalculatorKata
                         }
 
                     }
-
-                    if (delimiters.Any().Contains(Convert.ToChar(newDelimiter)))
+                    bool clearNewDelimiter = delimiters.Contains(Convert.ToChar(newDelimiter.First()));
+                    if (clearNewDelimiter)
                     {
                         // here
                         newDelimiter = null;
